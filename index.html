@@ -72,7 +72,7 @@
         }
         /* Legördülő menü stílusa */
         .accordion {
-            background-color: rgba(40, 167, 69, 0.5); /* 50%-ban átlátszó zöld háttér */
+            background-color: rgba(0, 128, 128, 0.5); /* Kékeszöld háttér, 50%-ban átlátszó */
             color: white;
             cursor: pointer;
             padding: 12px;
@@ -82,20 +82,20 @@
             border: none;
             text-align: left;
             outline: none;
-            font-size: 1.4em; /* Nagyobb betűméret */
+            font-size: 1.4em;
             transition: background-color 0.3s;
             display: flex;
             align-items: center;
-            justify-content: flex-start; /* Balra igazítás */
+            justify-content: flex-start;
             position: relative;
         }
         .accordion img {
-            width: 50px; /* Még nagyobb zászló */
+            width: 60px; /* Még nagyobb zászló */
             height: auto;
             margin-right: 10px;
         }
         .accordion:hover {
-            background-color: rgba(40, 167, 69, 0.7); /* Kevésbé átlátszó zöld hoverkor */
+            background-color: rgba(0, 128, 128, 0.7); /* Kevésbé átlátszó kékeszöld hoverkor */
         }
         /* Nyíl a legördülő menühöz */
         .accordion::after {
@@ -145,11 +145,11 @@
                 padding: 6px 10px;
             }
             .accordion {
-                font-size: 1.2em; /* Kicsit kisebb betűméret mobilon */
+                font-size: 1.2em;
                 padding: 10px;
             }
             .accordion img {
-                width: 45px; /* Kicsit kisebb zászló mobilon */
+                width: 55px; /* Kicsit kisebb zászló mobilon */
             }
             .accordion::after {
                 font-size: 0.9em;
