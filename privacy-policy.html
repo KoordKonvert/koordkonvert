@@ -72,13 +72,13 @@
         }
         /* Legördülő menü stílusa */
         .accordion {
-            background-color: rgba(0, 128, 128, 0.5); /* Kékeszöld háttér, 50%-ban átlátszó */
+            background-color: rgba(0, 128, 128, 0.5);
             color: white;
             cursor: pointer;
             padding: 12px;
             width: 100%;
             max-width: 600px;
-            margin: 0 auto;
+            margin: 0 auto 10px auto; /* Kis margó a menük között */
             border: none;
             text-align: left;
             outline: none;
@@ -95,7 +95,7 @@
             margin-right: 10px;
         }
         .accordion:hover {
-            background-color: rgba(0, 128, 128, 0.7); /* Kevésbé átlátszó kékeszöld hoverkor */
+            background-color: rgba(0, 128, 128, 0.7);
         }
         /* Nyíl a legördülő menühöz */
         .accordion::after {
@@ -178,6 +178,7 @@
         <h1>Privacy Policy - KoordKonvert</h1>
     </header>
     <div class="container">
+        <!-- Angol legördülő menü -->
         <button class="accordion">
             <img src="images/eng_us_flag.png" alt="English flag">
             Privacy Policy - KoordKonvert
@@ -207,23 +208,56 @@
 
             <p><strong>Contact:</strong> <a href="mailto:koordkonvert@gmail.com">koordkonvert@gmail.com</a></p>
         </div>
+
+        <!-- Magyar legördülő menü -->
+        <button class="accordion">
+            <img src="images/hun_flag.png" alt="Hungarian flag">
+            Adatvédelmi Nyilatkozat - KoordKonvert
+        </button>
+        <div class="accordion-content">
+            <p class="last-updated">Utolsó frissítés: 2025. március 20.</p>
+            <p><strong>A KoordKonvert alkalmazás fejlesztője elkötelezett a felhasználók adatainak védelme iránt. Ez a nyilatkozat bemutatja, hogyan kezeljük az adatokat</strong></p>
+
+            <p><strong>Gyűjtött adatok</strong></p>
+            <p>Helyadatok (opcionális, térkép és konvertálás céljából)</p>
+            <p>Vásárlási előzmények (Google Play Billing, ad-free verzióhoz)</p>
+            <p>Mentett koordináták (helyi SQLite adatbázisban)</p>
+            <p>Eszközazonosítók (Google Ads hirdetésekhez)</p>
+
+            <p><strong>Adatok felhasználása</strong></p>
+            <p>Az alkalmazás funkcióinak biztosítására (pl. térkép, koordináta-mentés).</p>
+            <p>Hirdetések megjelenítésére (Google Ads).</p>
+
+            <p><strong>Adatok megosztása</strong></p>
+            <p>Google LLC (Maps API, Ads, Billing) a funkcionalitás és hirdetések érdekében.</p>
+
+            <p><strong>Adatvédelem</strong></p>
+            <p>Az adatok HTTPS-en keresztül titkosítva továbbítódnak.</p>
+
+            <p><strong>Adattörlés</strong></p>
+            <p>Jelenleg nincs külön törlési funkció, de az alkalmazás eltávolításával a helyi adatok törlődnek.</p>
+
+            <p><strong>Kapcsolat:</strong> <a href="mailto:koordkonvert@gmail.com">koordkonvert@gmail.com</a></p>
+        </div>
     </div>
 
     <script>
-        // Legördülő menü működése
-        const accordion = document.querySelector('.accordion');
-        const content = document.querySelector('.accordion-content');
+        // Legördülő menük működése
+        const accordions = document.querySelectorAll('.accordion');
 
-        accordion.addEventListener('click', () => {
-            const isOpen = content.style.maxHeight;
+        accordions.forEach(accordion => {
+            accordion.addEventListener('click', () => {
+                const content = accordion.nextElementSibling;
+                const isOpen = content.style.maxHeight;
 
-            if (isOpen) {
-                content.style.maxHeight = null;
-                accordion.classList.remove('active');
-            } else {
-                content.style.maxHeight = content.scrollHeight + 'px';
-                accordion.classList.add('active');
-            }
+                if (isOpen) {
+                    content.style.maxHeight = null;
+                    accordion.classList.remove('active');
+                } else {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    accordion.classList.add('active');
+                }
+            });
         });
     </script>
 </body>
